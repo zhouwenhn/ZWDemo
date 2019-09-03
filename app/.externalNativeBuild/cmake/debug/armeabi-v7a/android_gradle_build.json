@@ -1,9 +1,12 @@
 
 {
-	"buildFiles" : [ "/Users/zhouwen/work/project/ZWDemo/app/src/main/cpp/CMakeLists.txt" ],
+	"buildFiles" : 
+	[
+		"/Users/zhouwen/work/project/ZWDemo/ZWDemo/app/src/main/cpp/CMakeLists.txt"
+	],
 	"cleanCommands" : 
 	[
-		"/Users/zhouwen/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/zhouwen/work/project/ZWDemo/app/.externalNativeBuild/cmake/debug/armeabi-v7a --target clean"
+		"/Users/zhouwen/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/zhouwen/work/project/ZWDemo/ZWDemo/app/.externalNativeBuild/cmake/debug/armeabi-v7a --target clean"
 	],
 	"cppFileExtensions" : [ "cpp" ],
 	"libraries" : 
@@ -12,18 +15,18 @@
 		{
 			"abi" : "armeabi-v7a",
 			"artifactName" : "native-lib",
-			"buildCommand" : "/Users/zhouwen/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/zhouwen/work/project/ZWDemo/app/.externalNativeBuild/cmake/debug/armeabi-v7a --target native-lib",
+			"buildCommand" : "/Users/zhouwen/Library/Android/sdk/cmake/3.6.4111459/bin/cmake --build /Users/zhouwen/work/project/ZWDemo/ZWDemo/app/.externalNativeBuild/cmake/debug/armeabi-v7a --target native-lib",
 			"buildType" : "debug",
 			"files" : 
 			[
 				
 				{
 					"flags" : "  --target=armv7-none-linux-androideabi23 --gcc-toolchain=/Users/zhouwen/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64 --sysroot=/Users/zhouwen/Library/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/darwin-x86_64/sysroot  -Dnative_lib_EXPORTS  -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mfpu=vfpv3-d16 -fno-addrsig -march=armv7-a -mthumb -mfpu=neon -Wa,--noexecstack -Wformat -Werror=format-security -stdlib=libc++  -O0 -fno-limit-debug-info  -fPIC    -c ",
-					"src" : "/Users/zhouwen/work/project/ZWDemo/app/src/main/cpp/native-lib.cpp",
-					"workingDirectory" : "/Users/zhouwen/work/project/ZWDemo/app/.externalNativeBuild/cmake/debug/armeabi-v7a"
+					"src" : "/Users/zhouwen/work/project/ZWDemo/ZWDemo/app/src/main/cpp/native-lib.cpp",
+					"workingDirectory" : "/Users/zhouwen/work/project/ZWDemo/ZWDemo/app/.externalNativeBuild/cmake/debug/armeabi-v7a"
 				}
 			],
-			"output" : "/Users/zhouwen/work/project/ZWDemo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so",
+			"output" : "/Users/zhouwen/work/project/ZWDemo/ZWDemo/app/build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so",
 			"toolchain" : "6190932075029139318"
 		}
 	},

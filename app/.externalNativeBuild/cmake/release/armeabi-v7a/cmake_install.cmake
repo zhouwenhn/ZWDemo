@@ -1,4 +1,4 @@
-# Install script for directory: /Users/zhouwen/work/project/ZWDemo/app/src/main/cpp
+# Install script for directory: /Users/zhouwen/work/project/ZWDemo/ZWDemo/app/src/main/cpp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/zhouwen/work/project/ZWDemo/app/.externalNativeBuild/cmake/release/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/zhouwen/work/project/ZWDemo/ZWDemo/app/.externalNativeBuild/cmake/release/armeabi-v7a/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
