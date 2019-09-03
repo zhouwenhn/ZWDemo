@@ -1,1 +1,1 @@
-include ':app', ':mediaextractordemo', ':mediamuxer'
+include ':app', ':mediaextractor', ':mediamuxer'
