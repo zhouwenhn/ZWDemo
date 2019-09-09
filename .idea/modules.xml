@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/ZWDemo.iml" filepath="$PROJECT_DIR$/ZWDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/audiorecordtrack/audiorecordtrack.iml" filepath="$PROJECT_DIR$/audiorecordtrack/audiorecordtrack.iml" />
       <module fileurl="file://$PROJECT_DIR$/mediaextractor/mediaextractor.iml" filepath="$PROJECT_DIR$/mediaextractor/mediaextractor.iml" />
       <module fileurl="file://$PROJECT_DIR$/mediamuxer/mediamuxer.iml" filepath="$PROJECT_DIR$/mediamuxer/mediamuxer.iml" />
     </modules>
