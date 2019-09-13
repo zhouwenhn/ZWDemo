@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/audiorecordtrack" />
             <option value="$PROJECT_DIR$/mediaextractor" />
             <option value="$PROJECT_DIR$/mediamuxer" />
+            <option value="$PROJECT_DIR$/mysurfaceview" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

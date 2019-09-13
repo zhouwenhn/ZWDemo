@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/audiorecordtrack/audiorecordtrack.iml" filepath="$PROJECT_DIR$/audiorecordtrack/audiorecordtrack.iml" />
       <module fileurl="file://$PROJECT_DIR$/mediaextractor/mediaextractor.iml" filepath="$PROJECT_DIR$/mediaextractor/mediaextractor.iml" />
       <module fileurl="file://$PROJECT_DIR$/mediamuxer/mediamuxer.iml" filepath="$PROJECT_DIR$/mediamuxer/mediamuxer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mysurfaceview/mysurfaceview.iml" filepath="$PROJECT_DIR$/mysurfaceview/mysurfaceview.iml" />
     </modules>
   </component>
 </project>

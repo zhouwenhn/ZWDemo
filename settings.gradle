@@ -1,1 +1,1 @@
-include ':app', ':mediaextractor', ':mediamuxer', ':audiorecordtrack'
+include ':app', ':mediaextractor', ':mediamuxer', ':audiorecordtrack', ':mysurfaceview'
