@@ -18,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.File;
@@ -55,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.READ_EXTERNAL_STORAGE
     };
 
+    private boolean mHasTrack = false;
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         if (requestCode == 2000) {
@@ -78,8 +81,7 @@ public class MainActivity extends AppCompatActivity {
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED ||
                     ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED ||
                     ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.RECORD_AUDIO,
-                        Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE}, 2000);
+                ActivityCompat.requestPermissions(this, permissions, 2000);
             }
         }
 
@@ -87,7 +89,6 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btn_audio_recorder_start).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 startRecord();
             }
         });
@@ -120,19 +121,34 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.btn_audio_track).setOnClickListener(new View.OnClickListener() {
+        final Button btnAudioTrack = findViewById(R.id.btn_audio_track);
+        btnAudioTrack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                playPcm();
+                if (!mHasTrack) {
+                    mHasTrack = true;
+                    playPcm();
+                    btnAudioTrack.setText("stop audio track");
+                } else {
+                    mHasTrack = false;
+                    btnAudioTrack.setText("start audio track");
+                    if (audioTrack != null) {
+                        audioTrack.stop();
+                        audioTrack.release();
+                        audioTrack = null;
+                    }
+                }
             }
         });
 
     }
 
+    AudioTrack audioTrack;
+
     private void playPcm() {
         final int bufferSizeInBytes = AudioRecord.getMinBufferSize(SAMPLE_RATE_INHZ, CHANNEL_CONFIG, AUDIO_FORMAT);
-        final AudioTrack audioTrack = new AudioTrack(
+        audioTrack = new AudioTrack(
                 new AudioAttributes.Builder()
                         .setUsage(AudioAttributes.USAGE_MEDIA)
                         .setContentType(AudioAttributes.CONTENT_TYPE_MUSIC)
@@ -144,8 +160,6 @@ public class MainActivity extends AppCompatActivity {
                 bufferSizeInBytes,
                 AudioTrack.MODE_STREAM,
                 AudioManager.AUDIO_SESSION_ID_GENERATE);
-//                new AudioTrack(STREAM_MUSIC, SAMPLE_RATE_INHZ, CHANNEL_CONFIG, AUDIO_FORMAT,
-//                bufferSizeInBytes, AudioTrack.MODE_STREAM);
         audioTrack.play();
         final File file = new File(getExternalFilesDir(Environment.DIRECTORY_MUSIC), "record.pcm");
         new Thread(new Runnable() {
@@ -155,7 +169,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     fileInputStream = new FileInputStream(file);
                     byte[] bytes = new byte[bufferSizeInBytes];
-                    while (fileInputStream.available() > 0){
+                    while (fileInputStream.available() > 0) {
                         int count = fileInputStream.read(bytes);
 
                         if (count != 0 && count != -1) {
@@ -166,8 +180,8 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
-                }finally {
-                    if (fileInputStream != null){
+                } finally {
+                    if (fileInputStream != null) {
                         try {
                             fileInputStream.close();
                         } catch (IOException e) {

@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/mediaextractor" />
             <option value="$PROJECT_DIR$/mediamuxer" />
             <option value="$PROJECT_DIR$/mysurfaceview" />
+            <option value="$PROJECT_DIR$/zwutils" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
