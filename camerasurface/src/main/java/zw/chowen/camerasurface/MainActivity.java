@@ -65,16 +65,15 @@ public class MainActivity extends AppCompatActivity implements SurfaceHolder.Cal
         findViewById(R.id.btn_start_camera).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startCamera();
-//                camera.autoFocus(new Camera.AutoFocusCallback() {
-//                    @Override
-//                    public void onAutoFocus(boolean success, Camera camera) {
-//                        if (success) {
-//                            mLogger.info("onAutoFocus");
-//                            startCamera();
-//                        }
-//                    }
-//                });
+                camera.autoFocus(new Camera.AutoFocusCallback() {
+                    @Override
+                    public void onAutoFocus(boolean success, Camera camera) {
+                        mLogger.info("onAutoFocus#success=" + success);
+                        if (success) {
+                            startCamera();
+                        }
+                    }
+                });
             }
         });
         findViewById(R.id.btn_stop_camera).setOnClickListener(new View.OnClickListener() {
