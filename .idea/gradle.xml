@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/audiorecordtrack" />
+            <option value="$PROJECT_DIR$/camerasurface" />
             <option value="$PROJECT_DIR$/mediaextractor" />
             <option value="$PROJECT_DIR$/mediamuxer" />
             <option value="$PROJECT_DIR$/mysurfaceview" />
