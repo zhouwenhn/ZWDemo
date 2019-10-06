@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/audiorecordtrack" />
+            <option value="$PROJECT_DIR$/binderpool" />
             <option value="$PROJECT_DIR$/camerasurface" />
             <option value="$PROJECT_DIR$/mediaextractor" />
             <option value="$PROJECT_DIR$/mediamuxer" />
@@ -18,6 +19,7 @@
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>

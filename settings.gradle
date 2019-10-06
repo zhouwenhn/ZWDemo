@@ -1,1 +1,1 @@
-include ':app', ':mediaextractor', ':mediamuxer', ':audiorecordtrack', ':mysurfaceview', ':zwutils', ':camerasurface'
+include ':app', ':mediaextractor', ':mediamuxer', ':audiorecordtrack', ':mysurfaceview', ':zwutils', ':camerasurface', ':binderpool'
