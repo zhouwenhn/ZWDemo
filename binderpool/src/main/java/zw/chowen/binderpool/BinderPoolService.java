@@ -17,6 +17,7 @@ public class BinderPoolService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         LOGGER.info("chowen#onBind=" + (IBinder) BinderPoolManager.getIns(this).getBinder());
+        //返回获取各模块IBinder的AIDL接口
         return (IBinder) BinderPoolManager.getIns(this).getBinder();
     }
 
