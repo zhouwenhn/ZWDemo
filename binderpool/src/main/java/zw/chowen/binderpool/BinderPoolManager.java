@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.ServiceConnection;
+import android.os.Binder;
 import android.os.IBinder;
 import android.os.RemoteException;
 
@@ -19,8 +20,10 @@ public class BinderPoolManager {
     private static BinderPoolManager sBinderPoolManager;
 
     private IBinderPoolInterface mIBinderPoolInterface;
+    private Context mContext;
 
     public BinderPoolManager(Context context) {
+        mContext = context.getApplicationContext();
         bindService(context.getApplicationContext());
     }
 
@@ -97,12 +100,30 @@ public class BinderPoolManager {
         return new BinderPoolServiceImpl();
     }
 
+    // process has already died
+    private Binder.DeathRecipient deathRecipient = new Binder.DeathRecipient(){
+
+        @Override
+        public void binderDied() {
+            LOGGER.info("chowen#binderDied");
+            mIBinderPoolInterface.asBinder().unlinkToDeath(deathRecipient, 0);
+            mIBinderPoolInterface = null;
+            bindService(mContext);
+        }
+    };
+
 
     private ServiceConnection serviceConnection = new ServiceConnection() {
         @Override
         public void onServiceConnected(ComponentName name, IBinder service) {
             mIBinderPoolInterface = IBinderPoolInterface.Stub.asInterface(service);
             LOGGER.info("chowen#onServiceConnected#mIBinderPoolInterface="+ mIBinderPoolInterface);
+
+            try {
+                mIBinderPoolInterface.asBinder().linkToDeath(deathRecipient, 0);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
         }
 
         @Override

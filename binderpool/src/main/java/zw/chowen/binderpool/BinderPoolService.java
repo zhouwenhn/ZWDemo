@@ -1,9 +1,11 @@
 package zw.chowen.binderpool;
 
 import android.app.Service;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.Process;
+import android.os.UserHandle;
 import android.support.annotation.Nullable;
 
 import java.util.logging.Logger;
@@ -37,4 +39,8 @@ public class BinderPoolService extends Service {
         BinderPoolManager.getIns(this).unbindService(this);
     }
 
+    @Override
+    public synchronized ComponentName startForegroundServiceAsUser(Intent service, UserHandle user) {
+        return null;
+    }
 }

@@ -2,6 +2,7 @@ package zw.chowen.com;
 
 
 import android.app.Service;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,6 +11,7 @@ import android.os.Message;
 import android.os.Messenger;
 import android.os.Process;
 import android.os.RemoteException;
+import android.os.UserHandle;
 import android.support.annotation.Nullable;
 
 import java.util.logging.Logger;
@@ -31,6 +33,11 @@ public class MessagerService extends Service {
     @Override
     public IBinder onBind(Intent intent) {
         return messenger.getBinder();
+    }
+
+    @Override
+    public synchronized ComponentName startForegroundServiceAsUser(Intent service, UserHandle user) {
+        return null;
     }
 
     private class SHandler extends Handler {
