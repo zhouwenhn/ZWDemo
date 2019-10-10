@@ -35,11 +35,6 @@ public class MessagerService extends Service {
         return messenger.getBinder();
     }
 
-    @Override
-    public synchronized ComponentName startForegroundServiceAsUser(Intent service, UserHandle user) {
-        return null;
-    }
-
     private class SHandler extends Handler {
         @Override
         public void handleMessage(Message msg) {

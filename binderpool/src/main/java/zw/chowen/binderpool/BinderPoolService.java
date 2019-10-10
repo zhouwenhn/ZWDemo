@@ -39,8 +39,4 @@ public class BinderPoolService extends Service {
         BinderPoolManager.getIns(this).unbindService(this);
     }
 
-    @Override
-    public synchronized ComponentName startForegroundServiceAsUser(Intent service, UserHandle user) {
-        return null;
-    }
 }

@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/mediaextractor/mediaextractor.iml" filepath="$PROJECT_DIR$/mediaextractor/mediaextractor.iml" />
       <module fileurl="file://$PROJECT_DIR$/mediamuxer/mediamuxer.iml" filepath="$PROJECT_DIR$/mediamuxer/mediamuxer.iml" />
       <module fileurl="file://$PROJECT_DIR$/mysurfaceview/mysurfaceview.iml" filepath="$PROJECT_DIR$/mysurfaceview/mysurfaceview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pcontentprovider/pcontentprovider.iml" filepath="$PROJECT_DIR$/pcontentprovider/pcontentprovider.iml" />
       <module fileurl="file://$PROJECT_DIR$/zwutils/zwutils.iml" filepath="$PROJECT_DIR$/zwutils/zwutils.iml" />
     </modules>
   </component>
